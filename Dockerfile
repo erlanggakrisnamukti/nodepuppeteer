@@ -1,3 +1,3 @@
 FROM alekzonder/puppeteer:latest
 USER root
-RUN apt-get -yq install bash openssh-client
+RUN apt-get update && apt-get -yq install bash && apt-get -yq install openssh
