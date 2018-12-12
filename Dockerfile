@@ -1,4 +1,4 @@
-FROM node:9-alpine
+FROM node:alpine
 
 # Installs latest Chromium (63) package.
 RUN apk update && apk upgrade && \
