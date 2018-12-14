@@ -14,7 +14,13 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get purge --auto-remove -y curl \
-    && rm -rf /src/*.deb
+    && rm -rf /src/*.deb \
+    && apt-get update \
+    && apt-get -yq install bash \
+    && apt-get -yq install openssh-client \
+    && apt-get -yq install openssh-server \
+    && apt-get -yq install git
+
 
 # It's a good idea to use dumb-init to help prevent zombie chrome processes.
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /usr/local/bin/dumb-init
